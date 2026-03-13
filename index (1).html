@@ -491,7 +491,7 @@ html, body {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-glow);
 }
-.form-select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23d4af37' d='M6 8L0 0h12z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
+.form-select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23888888' d='M6 8L0 0h12z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
 .form-textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
@@ -1099,23 +1099,23 @@ html, body {
 <div id="app">
   <!-- TOPBAR -->
   <header id="topbar">
-    <div class="topbar-logo">
-      <div class="logo-icon">S</div>
+    <div class="topbar-logo" aria-label="StudentOS">
+      <div class="logo-icon" aria-hidden="true">S</div>
       <span>StudentOS</span>
     </div>
     <div class="topbar-search">
-      <span class="search-icon">⌕</span>
+      <span class="search-icon" aria-hidden="true">⌕</span>
       <input type="text" id="globalSearch" placeholder="Search tasks, assignments, events…" autocomplete="off">
       <div class="search-dropdown" id="searchDropdown"></div>
     </div>
     <div class="topbar-actions">
-      <div class="btn-icon" id="btnNotif" title="Notifications" style="position:relative">
+      <div class="btn-icon" id="btnNotif" title="Notifications" role="button" aria-label="Notifications" style="position:relative">
         🔔
         <span class="notif-badge" id="notifBadge">3</span>
       </div>
-      <div class="btn-icon" id="btnTheme" title="Toggle theme">🌙</div>
-      <div class="btn-icon" id="btnFullscreen" title="Fullscreen (F11)">⛶</div>
-      <div class="btn-icon" id="btnFocus" title="Focus Mode">🎯</div>
+      <div class="btn-icon" id="btnTheme" title="Toggle theme" role="button" aria-label="Toggle light/dark theme">🌙</div>
+      <div class="btn-icon" id="btnFullscreen" title="Fullscreen (F11)" role="button" aria-label="Toggle fullscreen mode">⛶</div>
+      <div class="btn-icon" id="btnFocus" title="Focus Mode" role="button" aria-label="Enter focus mode">🎯</div>
       <button class="btn-primary" id="btnQuickAdd">+ Quick Add</button>
     </div>
   </header>
@@ -3183,7 +3183,6 @@ document.addEventListener('webkitfullscreenchange', updateFullscreenIcon);
 
 document.addEventListener('keydown', e => {
   if (e.key === 'F11') {
-    e.preventDefault();
     toggleFullscreen();
   }
 });
